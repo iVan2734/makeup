@@ -45,6 +45,7 @@ def get_predictions_from_url(brand, name, high_csv="high_end.csv", low_csv="low_
         matchingList.append(temp)
 
     matchingList.sort(key=lambda x: x[0], reverse=True)
+    topn=min(topn, len(matchingList))
     result = []
     for match, idx in matchingList[:topn]:
         row = lowEnd.iloc[idx]
@@ -55,7 +56,7 @@ def get_predictions_from_url(brand, name, high_csv="high_end.csv", low_csv="low_
             "category": row["category"],
             "description": row["description"],
             "ingredients": row["ingredients"],
-            "price_rsd": row["price_rsd"],
+            "price_rsd": float(row["price_rsd"]) if pd.notna(row["price_rsd"]) else 0.0,
             "shade": row["shade"],
             "match_probability": round(float(match), 4)
         })
