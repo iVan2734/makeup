@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Doppelganger Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <h1 class="logo">💄 Makeup Doppelganger Finder</h1>
+                <p class="tagline">Find identical or similar makeup products with AI-powered matching</p>
+            </div>
+        </header>
+
+        <div class="user-search-panel" style="margin-bottom: 2em; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <input id="brand-input" class="search-input" placeholder="Brand (e.g. MAC)" style="flex:1; min-width:180px; max-width:220px;">
+            <input id="name-input" class="search-input" placeholder="Product name (e.g. Ruby Woo Lipstick)" style="flex:2; min-width:220px; max-width:320px;">
+            <button class="btn-search-url" onclick="searchByProduct()">Find Dupes</button>
+            <div id="search-status" style="min-width:150px; color:#c44569; font-weight:500; padding-left:8px;"></div>
+        </div>
+
+        <div class="url-search-section">
+            <div class="url-search-card">
+                <h3>🔗 Search by Product URL</h3>
+                <p>Paste a product URL to find similar matches in our database</p>
+                <div class="url-input-group">
+                    <input type="url" id="product-url" placeholder="https://example.com/product/..." class="url-input">
+                    <button class="btn-search-url" onclick="searchByURL()">
+                        <span>Search</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div id="url-search-status" class="url-status"></div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="filters-panel" id="filters-panel">
+                <h3>Your Requirements</h3>
+                <div class="filter-item">
+                    <label>Price Range</label>
+                    <div class="price-display" id="price-display">$0 - $100</div>
+                </div>
+                <div class="filter-item">
+                    <label>Skin Type</label>
+                    <div class="skin-type-display" id="skin-type-display">All</div>
+                </div>
+                <div class="filter-item">
+                    <label>Availability</label>
+                    <div class="availability-display" id="availability-display">Available</div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <h2 id="results-title">Best Matches</h2>
+                    <div class="results-count" id="results-count">0 products found</div>
+                </div>
+                
+                <div id="loading" class="loading-container">
+                    <div class="spinner"></div>
+                    <p>Finding your perfect matches...</p>
+                </div>
+
+                <div id="products-grid" class="products-grid">
+                    <!-- Products will be displayed here -->
+                </div>
+
+                <div id="no-results" class="no-results" style="display: none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No matches found</h3>
+                    <p>Try adjusting your requirements</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

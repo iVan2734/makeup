@@ -1,0 +1,13 @@
+[
+    {"id": 1, "name": "Red Lipstick", "brand": "MAC", "color": "Red", "type": "Lipstick", "price": 18.50},
+    {"id": 2, "name": "Nude Foundation", "brand": "Maybelline", "color": "Beige", "type": "Foundation", "price": 12.99},
+    {"id": 3, "name": "Black Mascara", "brand": "L'Oreal", "color": "Black", "type": "Mascara", "price": 9.99},
+    {"id": 4, "name": "Red Lipstick", "brand": "MAC", "color": "Red", "type": "Lipstick", "price": 18.50},
+    {"id": 5, "name": "Pink Blush", "brand": "NARS", "color": "Pink", "type": "Blush", "price": 30.00},
+    {"id": 6, "name": "Black Mascara", "brand": "L'Oreal", "color": "Black", "type": "Mascara", "price": 9.99},
+    {"id": 7, "name": "Brown Eyeliner", "brand": "Urban Decay", "color": "Brown", "type": "Eyeliner", "price": 22.00},
+    {"id": 8, "name": "Nude Foundation", "brand": "Maybelline", "color": "Beige", "type": "Foundation", "price": 12.99},
+    {"id": 9, "name": "Purple Eyeshadow", "brand": "Too Faced", "color": "Purple", "type": "Eyeshadow", "price": 16.00},
+    {"id": 10, "name": "Red Lipstick", "brand": "MAC", "color": "Red", "type": "Lipstick", "price": 18.50}
+]
+
