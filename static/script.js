@@ -16,9 +16,9 @@ function displayFilters() {
     const params = getURLParams();
     
     if (params.price) {
-        document.getElementById('price-display').textContent = `$${params.price}`;
+        document.getElementById('price-display').textContent = `${params.price}`;
     } else {
-        document.getElementById('price-display').textContent = '$0 - $100';
+        document.getElementById('price-display').textContent = '0 - 100$';
     }
     
     if (params.skin_type) {
@@ -177,7 +177,7 @@ function displayProducts(products) {
         const brand = product.brand || product.Brand || 'Unknown Brand';
         const productType = product.product_type || product.type || product.Type || product.category || 'Unknown';
         const price = product.price || product.Price || product.cost || product.price_rsd || 0;
-        const priceSign = product.price_sign || '$';
+        const priceSign = product.price_sign || '';
         const currency = product.currency || 'RSD';
         const itemId = product.id || product.ID || 'N/A';
         
@@ -256,7 +256,7 @@ function displayProducts(products) {
                     <div class="product-type">${productType}</div>
                     ${colorDisplay ? `<div class="product-colors">🎨 ${colorDisplay}</div>` : ''}
                     <div class="product-details">
-                        <div class="product-price">${priceSign}${parseFloat(price).toFixed(2)} ${currency}</div>
+                        <div class="product-price">${parseFloat(price).toFixed(2)} ${currency}</div>
                     </div>
                     ${statsHTML}
                     <div class="best-category">
